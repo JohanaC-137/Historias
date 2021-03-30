@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="app">
+            <h2>Historias</h2>
+            <h4>Las historias de Josefa Wallace:</h4>
+                <ul v-for="historia in historiasJosefa">
+                   <li type="text" class="campo">{{historia.texto}}</li>
+                </ul>
+            
+            <h4>Las historias de Martina Cañas:</h4>
+            <ul v-for="historia in historiasMartina"> 
+                 <li type="text" class="campo">{{historia.texto}}</li>
+            </ul>
+
+        <div class="input-group rounded">
+	        <input v-model="input" type="search" class="campo" class="form-control rounded" placeholder="Qué buscas"/>
+	        <span class="input-group-text" id="search-addon">
+	            <i class="fas fa-search"></i>
+	            </span>
+	    </div>
+	        <h6>Resultados de búsqueda:</h6>
+	        <ul v-for="historia in busqueda" v-show="input">
+	            <li>{{historia.texto}}</li>
+	        </ul>
+	    </div>
+    </div>
+    <script src="historia.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
